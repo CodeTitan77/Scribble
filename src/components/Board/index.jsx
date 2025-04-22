@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import rough from "roughjs";
-import './App.css'
 
 function Board() {
   const canvasRef= useRef();
@@ -11,9 +9,11 @@ function Board() {
     const canvas=canvasRef.current;
     canvas.width= window.innerWidth;
     canvas.height= window.innerHeight;
+    const context=canvas.getContext("2d");
+   
     const roughCanvas= rough.canvas(canvas);
     const generator= roughCanvas.generator;
-    const context= canvas.getContext("2d");
+   
 
     
 
@@ -24,7 +24,7 @@ function Board() {
     
    <div className='App'> 
    <canvas ref={canvasRef} height="100vh" width="100vw"/>
-   <h1>My WhiteBoard App </h1>
+   <h1 className='text-red-300'>My WhiteBoard App </h1>
 
    </div>
   )
